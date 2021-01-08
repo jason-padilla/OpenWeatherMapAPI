@@ -1,4 +1,4 @@
-$(document).ready(function() {
+
     $('form').submit(function() {
 
         let app_id = "dfdf07498591176737fffe143b8bd7fc";
@@ -14,8 +14,9 @@ $(document).ready(function() {
             let wind_speed = $('#windSpeed');
             let city_header = $('#cityHeader');
             let weather_icon = $('#documentIconImg');
-
-            weather_icon.src = 'http://openweathermap.org/img/w/'+res.weather[0].icon+'.png';
+            console.log(res.weather[0].icon);
+            weather_icon.attr('src','http://openweathermap.org/img/w/'+res.weather[0].icon+'.png?rand=' + Math.random());
+            
             let result_description = res.weather[0].description;
             weather_header.text(result_description.charAt(0).toUpperCase()+result_description.slice(1));
             temperature.html(Math.floor(res.main.temp)+'&#176');
@@ -69,4 +70,3 @@ $(document).ready(function() {
         weather_container.css('left',`calc(50% - ${weather_container[0].clientWidth/2}px)`);
         weather_container.css('top',`calc(50% - ${weather_container[0].clientHeight/1.3}px)`);
     }
-});

@@ -38,6 +38,9 @@ body {
     display: inline-block;
 }
 
+#weatherMain img {
+    vertical-align: baseline;
+}
 #weatherDescriptionHeader, #temperature {
     font-size: 28px;
     vertical-align: 50%;
